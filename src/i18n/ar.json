@@ -3,7 +3,11 @@
   "button.save": "حفظ التغييرات",
   "input.email": "البريد الإلكتروني",
   "input.password": "كلمة المرور",
+  "auth.login-welcome": "اهلا, <span>مرحبا بك مرة أخرى!</span>",
+  "auth.login": "تسجيل الدخول",
   "auth.email-required": "البريد الإلكتروني مطلوب",
   "auth.email-invalid": "البريد الإلكتروني غير صالح",
-  "auth.password-required": "كلمة المرور مطلوبة"
+  "auth.password-required": "كلمة المرور مطلوبة",
+  "auth.forgot-password": "هل نسيت كلمة المرور؟",
+  "auth.dont-have-account": "ليس لديك حساب؟ <cta>تسجيل</cta>"
 }
