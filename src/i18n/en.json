@@ -1,4 +1,9 @@
 {
   "home.welcome": "Welcome to our project!",
-  "button.save": "Save Changes"
+  "button.save": "Save Changes",
+  "input.email": "Email",
+  "input.password": "Password",
+  "auth.email-required": "Email is required",
+  "auth.email-invalid": "Invalid email address",
+  "auth.password-required": "Password is required"
 }

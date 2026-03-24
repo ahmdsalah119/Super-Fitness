@@ -1,0 +1,9 @@
+{
+  "home.welcome": "مرحبا بك في مشروعنا!",
+  "button.save": "حفظ التغييرات",
+  "input.email": "البريد الإلكتروني",
+  "input.password": "كلمة المرور",
+  "auth.email-required": "البريد الإلكتروني مطلوب",
+  "auth.email-invalid": "البريد الإلكتروني غير صالح",
+  "auth.password-required": "كلمة المرور مطلوبة"
+}
