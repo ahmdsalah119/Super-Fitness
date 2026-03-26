@@ -1,3 +1,5 @@
+import { Deflate } from "node:zlib";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   // Check if you are using dark mode
@@ -6,7 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        //custom colors
+        //custom colors for the app, including the primary and secondary colors
+        fontfamily: {
+          DEFAULT: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
+          rubik: ["Rubik", "sans-serif"],
+        },
         primary: {
           DEFAULT: "#FF6600", // the orange color
           foreground: "oklch(0.985 0 0)",
