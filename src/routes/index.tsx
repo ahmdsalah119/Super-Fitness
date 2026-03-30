@@ -1,3 +1,5 @@
+import AuthLayout from "@/app/auth/layout";
+import Register from "@/app/auth/register/Register";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -8,5 +10,13 @@ export const router = createBrowserRouter([
         <h1 className="text-2xl  underline">Tailwind is working</h1>
       </div>
     ),
+  },
+  {
+       path: "/auth",
+      element: <AuthLayout />,
+      children: [
+        
+        { path: "register", element: <Register /> }
+      ],
   },
 ]);
