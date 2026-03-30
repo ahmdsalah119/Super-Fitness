@@ -39,7 +39,7 @@ export default function AuthLayout() {
         </div>
 
         {/* RIGHT */}
-        <div className="w-1/2 flex items-center overflow-hidden justify-center">
+        <div className="w-1/2 flex items-center overflow-hidden justify-center bg-black/30">
           <Outlet />
         </div>
       </div>
