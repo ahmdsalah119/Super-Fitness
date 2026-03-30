@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Login from "@/features/auth/login";
 
 export const router = createBrowserRouter([
   {
@@ -8,5 +9,9 @@ export const router = createBrowserRouter([
         <h1 className="text-2xl  underline">Tailwind is working</h1>
       </div>
     ),
+  },
+  {
+    path: "/auth/login",
+    element: <Login />,
   },
 ]);

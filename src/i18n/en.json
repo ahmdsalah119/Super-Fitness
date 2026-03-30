@@ -1,4 +1,13 @@
 {
   "home.welcome": "Welcome to our project!",
-  "button.save": "Save Changes"
+  "button.save": "Save Changes",
+  "input.email": "Email",
+  "input.password": "Password",
+  "auth.login-welcome": "Hey There, <span>Welcome back!</span>",
+  "auth.login": "Login",
+  "auth.email-required": "Email is required",
+  "auth.email-invalid": "Invalid email address",
+  "auth.password-required": "Password is required",
+  "auth.forgot-password": "Forgot Password?",
+  "auth.dont-have-account": "Don't Have An Account Yet? <cta>Register</cta>"
 }
