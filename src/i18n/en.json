@@ -1,4 +1,12 @@
 {
   "home.welcome": "Welcome to our project!",
-  "button.save": "Save Changes"
+  "button.save": "Save Changes",
+  "auth.welcome": "Hey There",
+  "register.welcome": "create an account",
+  "input.firstName": "First Name",
+  "input.lastName": "Last Name",
+  "input.email": "Email",
+  "input.password": "Password",
+  "auth.forgot-password": "Forgot Password?",
+  "auth.do-have-account": "Already Have an account ? <cta>Login</cta>"
 }
