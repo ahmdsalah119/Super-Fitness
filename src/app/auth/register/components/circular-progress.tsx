@@ -36,7 +36,7 @@ const CircularProgress = ({
   }`;
 
   return (
-    <div className="relative mt-7 mb-6">
+    <div className="relative mt-7">
       <svg
         className="relative"
         height={size}

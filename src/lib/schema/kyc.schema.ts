@@ -14,8 +14,7 @@ export const stepRegisterSchema = z.object({
 });
 
 export const stepGenderSchema = z.object({
-  gender: z.enum(["male", "female"], {
-    }),
+  gender: z.enum(["male", "female"])
 });
 
 export const stepAgeSchema = z.object({
@@ -31,11 +30,11 @@ export const stepHeightSchema = z.object({
 });
 
 export const stepGoalSchema = z.object({
-  goal: z.string().min(1, "Goal is required"),
+  goal: z.string().min(1),
 });
 
 export const levelsSchema = z.object({
-  activityLevel: z.string().min(1, "Level is required"),
+  activityLevel: z.string().min(1),
 });
 
 export const registerFormSchema = stepRegisterSchema

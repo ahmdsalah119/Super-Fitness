@@ -1,0 +1,20 @@
+{
+  "step.subtitle": " يساعدنا  في  عمل خطة مناسبة لك",
+  "step.next": "التالي",
+  "stepAge.title": "كم عمرك؟",
+  "stepAge.yearsOld": "سنة",
+  "stepGender.title": "! اخبرنا عن نفسك",
+  "stepGender.subtitle": "نحتاج معرفة نوعك",
+  "stepGender.male": "ذكر",
+  "stepGender.female": "أنثى",
+  "stepGoals.title": "ما هو هدفك؟",
+  "stepGoals.gainWeight": "زيادة الوزن",
+  "stepGoals.loseWeight": "إنقاص الوزن",
+  "stepGoals.getFitter": "تحسين اللياقة",
+  "stepGoals.gainFlexibility": "زيادة المرونة",
+  "stepGoals.learnBasics": "تعلم الأساسيات",
+  "stepHeight.title": "ما هو طولك؟",
+  "stepHeight.unit": "سم",
+   "stepWeight.title": "ما هو وزنك؟",
+  "stepWeight.unit": "كجم"
+}

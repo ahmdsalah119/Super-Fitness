@@ -3,6 +3,8 @@ import StepWrapper from "./step-wrapper";
 import { useLevels } from "../_hooks/use-get-levels";
 import { cn } from "@/lib/utils/utils";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useIntl } from "react-intl";
+
 export default function StepLevels({
   next,
   back,
@@ -12,16 +14,24 @@ export default function StepLevels({
   back: () => void;
   loading?: boolean;
 }) {
+  // Translation
+  const intl = useIntl();
+  type Locale = "en" | "ar";
+  const locale = intl.locale as Locale;
+
+  // hooks
   const {
     setValue,
     watch,
     trigger,
     formState: { errors },
   } = useFormContext();
+
+  const { data: levels, isLoading } = useLevels(locale);
+
   const selectedLevel = watch("activityLevel");
 
-  const { data: levels, isLoading } = useLevels("en");
-
+  // Functions
   const handleNext = async () => {
     const ok = await trigger("activityLevel");
     if (!ok) return;
@@ -34,8 +44,8 @@ export default function StepLevels({
 
   return (
     <StepWrapper
-      title="What is your goal?"
-      subtitle="This helps us personalize your plan"
+      title={intl.formatMessage({ id: "stepLevels.title" })}
+      subtitle={intl.formatMessage({ id: "stepLevels.subtitle" })}
       onNext={handleNext}
       onBack={back}
       disableNext={!selectedLevel || !!errors.activityLevel || loading}
@@ -47,25 +57,23 @@ export default function StepLevels({
         }
         className="flex flex-col gap-4 mt-6"
       >
-        {levels?.slice(0,5)?.map((level) => (
+        {levels?.slice(0, 5)?.map((level) => (
           <label
             key={level._id}
             className={cn(
               "flex justify-between items-center bg-[#D3D3D333] cursor-pointer w-[311px] py-2 px-4 border rounded-[20px] transition-all",
-              selectedLevel === level.name
+              selectedLevel === level._id
                 ? "border-[#FF4100]"
                 : "border-[#d9d9d9]",
             )}
           >
-            {/* hidden radio */}
-            <RadioGroupItem value={level.name} className="hidden" />
+            <RadioGroupItem value={level._id} className="hidden" />
 
-            {/* Label */}
             <span
               className={cn(
-                "text-lg font-bold capitalize transition",
+                "text-lg font-bold transition",
                 selectedLevel
-                  ? selectedLevel === level.name
+                  ? selectedLevel === level._id
                     ? "text-[#FF4100]"
                     : "text-white"
                   : "text-[#D3D3D3]",
@@ -74,9 +82,8 @@ export default function StepLevels({
               {level.name}
             </span>
 
-            {/* Custom Circle */}
             <div className="w-4 h-4 rounded-full border border-[#d9d9d9] flex items-center justify-center transition-all duration-300">
-              {selectedLevel === level.name && (
+              {selectedLevel === level._id && (
                 <div className="w-2 h-2 rounded-full bg-[#FF4100]" />
               )}
             </div>

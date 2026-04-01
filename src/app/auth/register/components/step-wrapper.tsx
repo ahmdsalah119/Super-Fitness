@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowBigLeft } from "lucide-react";
+import { useIntl } from "react-intl";
 
 type StepWrapperProps = {
   title?: string;
@@ -19,10 +20,12 @@ export default function StepWrapper({
   onBack,
   disableNext,
 }: StepWrapperProps) {
+  const intl = useIntl();
+
   return (
-    <div className="flex py-4  flex-col items-center justify-center text-white space-y-8">
+    <div className="flex flex-col items-center justify-center text-white space-y-8">
       {/* Title */}
-      <div className="text-center space-y-2">
+      <div className="text-center">
         <h1 className="text-5xl font-extrabold uppercase text-white">
           {title}
         </h1>
@@ -39,12 +42,13 @@ export default function StepWrapper({
           onClick={onBack}
         />
       )}
+
       <Button
         onClick={onNext}
         disabled={disableNext}
         className="font-extrabold h-10 cursor-pointer px-4 py-2 bg-[#FF4100] rounded-full disabled:bg-[#D3D3D3] disabled:opacity-100 disabled:text-white w-[343px]"
       >
-        Next
+        {intl.formatMessage({ id: "step.next" })}
       </Button>
     </div>
   );

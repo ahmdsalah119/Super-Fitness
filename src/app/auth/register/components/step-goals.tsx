@@ -1,14 +1,15 @@
 import { useFormContext } from "react-hook-form";
+import { useIntl } from "react-intl";
 import StepWrapper from "./step-wrapper";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils/utils";
 
 const goals = [
-  "Gain Weight",
-  "Lose Weight",
-  "git fitter",
-  "Gain more flexible",
-  "Learn the basic",
+  "gainWeight",
+  "loseWeight",
+  "getFitter",
+  "gainFlexibility",
+  "learnBasics",
 ];
 
 export default function StepGoals({
@@ -18,14 +19,20 @@ export default function StepGoals({
   next: () => void;
   back: () => void;
 }) {
+  // Translation
+  const intl = useIntl();
+
+  // hooks
   const {
     setValue,
     watch,
     trigger,
     formState: { errors },
   } = useFormContext();
+
   const selectedGoal = watch("goal");
 
+  // Functions
   const handleNext = async () => {
     const ok = await trigger("goal");
     if (!ok) return;
@@ -34,8 +41,8 @@ export default function StepGoals({
 
   return (
     <StepWrapper
-      title="What is your goal?"
-      subtitle="This helps us personalize your plan"
+      title={intl.formatMessage({ id: "stepGoals.title" })}
+      subtitle={intl.formatMessage({ id: "step.subtitle" })}
       onNext={handleNext}
       onBack={back}
       disableNext={!selectedGoal || !!errors.goal}
@@ -55,13 +62,11 @@ export default function StepGoals({
               selectedGoal === goal ? "border-[#FF4100]" : "border-[#d9d9d9]",
             )}
           >
-            {/* Hidden radio */}
             <RadioGroupItem value={goal} className="hidden" />
 
-            {/* Label */}
             <span
               className={cn(
-                "text-lg font-bold capitalize transition",
+                "text-lg font-bold transition",
                 selectedGoal
                   ? selectedGoal === goal
                     ? "text-[#FF4100]"
@@ -69,7 +74,7 @@ export default function StepGoals({
                   : "text-[#D3D3D3]",
               )}
             >
-              {goal}
+              {intl.formatMessage({ id: `stepGoals.${goal}` })}
             </span>
 
             <div className="w-4 h-4 rounded-full border border-[#d9d9d9] flex items-center justify-center transition-all duration-300">

@@ -53,7 +53,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6">
+    <div className="">
       {/* Progress */}
       {step !== 0 && (
         <CircularProgressWithLabelDemo

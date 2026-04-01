@@ -7,6 +7,7 @@ export default function KycFormProvider({
 }: {
   children: React.ReactNode;
 }) {
+  // Form & validation
   const methods = useForm({
     resolver: zodResolver(registerFormSchema),
     mode: "onChange",

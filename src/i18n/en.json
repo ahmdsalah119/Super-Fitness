@@ -1,4 +1,23 @@
 {
   "home.welcome": "Welcome to our project!",
-  "button.save": "Save Changes"
+  "button.save": "Save Changes",
+  "step.subtitle": "This helps us create your personalized plan",
+  "step.next": "Next",
+  "stepAge.title": "How old are you?",
+  "stepAge.yearsOld": "Years Old",
+  "stepGender.title": "Tell us about yourself!",
+  "stepGender.subtitle": "We need to know your gender",
+  "stepGender.male": "Male",
+  "stepGender.female": "Female",
+  "stepGoals.title": "What is your goal?",
+  "stepGoals.gainWeight": "Gain weight",
+  "stepGoals.loseWeight": "Lose weight",
+  "stepGoals.getFitter": "Get fitter",
+  "stepGoals.gainFlexibility": "Gain flexibility",
+  "stepGoals.learnBasics": "Learn the basics",
+  "stepHeight.title": "What's your height?",
+  "stepHeight.unit": "cm",
+  "stepWeight.title": "What's your weight?",
+  "stepWeight.unit": "kg"
+
 }
