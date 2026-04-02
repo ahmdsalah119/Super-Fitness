@@ -4,6 +4,7 @@ import { useLevels } from "../_hooks/use-get-levels";
 import { cn } from "@/lib/utils/utils";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useIntl } from "react-intl";
+import { useHandleNext } from "../_hooks/use-handle-next";
 
 export default function StepLevels({
   next,
@@ -19,24 +20,21 @@ export default function StepLevels({
   type Locale = "en" | "ar";
   const locale = intl.locale as Locale;
 
-  // hooks
+  // React Hook Form's Context
   const {
     setValue,
     watch,
-    trigger,
     formState: { errors },
   } = useFormContext();
 
+  // Queries
   const { data: levels, isLoading } = useLevels(locale);
-
+  
+  // Variables
   const selectedLevel = watch("activityLevel");
 
   // Functions
-  const handleNext = async () => {
-    const ok = await trigger("activityLevel");
-    if (!ok) return;
-    next();
-  };
+  const handleNext = useHandleNext("activityLevel", next);
 
   if (isLoading) {
     return <p className="text-white">Loading...</p>;

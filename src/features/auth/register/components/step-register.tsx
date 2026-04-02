@@ -1,13 +1,12 @@
 import { useFormContext, useFormState } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import StepWrapper from "./step-wrapper";
+import { useHandleNext } from "../_hooks/use-handle-next";
 
 export default function StepRegister({ next }: { next: () => void }) {
-  const { register, trigger, control } = useFormContext();
+  const { register, control } = useFormContext();
 
   const fields = ["firstName", "lastName", "email", "password"];
-
-  console.log("render......");
 
   const { errors, dirtyFields } = useFormState({
     control,
@@ -16,11 +15,8 @@ export default function StepRegister({ next }: { next: () => void }) {
 
   const allTouched = fields.every((field) => dirtyFields[field]);
   const hasErrors = fields.some((field) => errors[field]);
-  const handleNext = async () => {
-    const ok = await trigger(fields);
-    if (!ok) return;
-    next();
-  };
+
+  const handleNext = useHandleNext(fields, next);
 
   return (
     <StepWrapper onNext={handleNext} disableNext={!allTouched || hasErrors}>

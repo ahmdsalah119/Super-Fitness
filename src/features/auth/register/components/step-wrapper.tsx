@@ -20,6 +20,8 @@ export default function StepWrapper({
   onBack,
   disableNext,
 }: StepWrapperProps) {
+  
+  // Translation
   const intl = useIntl();
 
   return (

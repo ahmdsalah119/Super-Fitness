@@ -3,6 +3,7 @@ import { useIntl } from "react-intl";
 import StepWrapper from "./step-wrapper";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils/utils";
+import { useHandleNext } from "../_hooks/use-handle-next";
 
 const goals = [
   "gainWeight",
@@ -22,22 +23,18 @@ export default function StepGoals({
   // Translation
   const intl = useIntl();
 
-  // hooks
+  // React Hook Form's Context
   const {
     setValue,
     watch,
-    trigger,
     formState: { errors },
   } = useFormContext();
 
+  // Variables
   const selectedGoal = watch("goal");
 
   // Functions
-  const handleNext = async () => {
-    const ok = await trigger("goal");
-    if (!ok) return;
-    next();
-  };
+  const handleNext = useHandleNext("goal", next);
 
   return (
     <StepWrapper

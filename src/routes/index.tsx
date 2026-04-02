@@ -1,5 +1,6 @@
-import AuthLayout from "@/app/auth/layout";
-import Register from "@/app/auth/register/Register";
+
+import AuthLayout from "@/features/auth/layout";
+import Register from "@/features/auth/register/Register";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([

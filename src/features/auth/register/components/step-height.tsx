@@ -2,6 +2,7 @@ import { useFormContext } from "react-hook-form";
 import { useIntl } from "react-intl";
 import StepWrapper from "./step-wrapper";
 import HorizontalPicker from "./horizontal-picker";
+import { useHandleNext } from "../_hooks/use-handle-next";
 
 export default function StepHeight({
   next,
@@ -13,28 +14,23 @@ export default function StepHeight({
   // Translation
   const intl = useIntl();
 
-  // hooks
+  // React Hook Form's Context
   const {
     setValue,
     watch,
-    trigger,
     formState: { errors },
   } = useFormContext();
 
-  const height = watch("height");
-  
   // Variables
-  const heightOptions = Array.from({ length: 71 }, (_, i) => {
+  const height = watch("height");
+
+  // Functions
+  const heightOptions = Array.from({ length: 70 }, (_, i) => {
     const value = i + 140;
     return { label: value.toString(), value };
   });
 
-  // Functions
-  const handleNext = async () => {
-    const ok = await trigger("height");
-    if (!ok) return;
-    next();
-  };
+  const handleNext = useHandleNext("height", next);
 
   return (
     <StepWrapper

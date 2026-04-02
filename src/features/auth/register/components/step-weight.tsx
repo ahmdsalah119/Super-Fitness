@@ -2,6 +2,7 @@ import { useFormContext } from "react-hook-form";
 import { useIntl } from "react-intl";
 import StepWrapper from "./step-wrapper";
 import HorizontalPicker from "./horizontal-picker";
+import { useHandleNext } from "../_hooks/use-handle-next";
 
 export default function StepWeight({
   next,
@@ -13,28 +14,23 @@ export default function StepWeight({
   // Translation
   const intl = useIntl();
 
-  // hooks
+  // React Hook Form's Context
   const {
     setValue,
     watch,
-    trigger,
     formState: { errors },
   } = useFormContext();
 
+  // Variables
   const weight = watch("weight");
 
-  // Variables
+  // Functions
   const weightOptions = Array.from({ length: 111 }, (_, i) => {
     const value = i + 40;
     return { label: value.toString(), value };
   });
 
-  // Functions
-  const handleNext = async () => {
-    const ok = await trigger("weight");
-    if (!ok) return;
-    next();
-  };
+  const handleNext = useHandleNext("weight", next);
 
   return (
     <StepWrapper

@@ -13,17 +13,22 @@ import { RegisterFormSchema } from "@/lib/schema/kyc.schema";
 import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage() {
+  // Navigation
   const navigate = useNavigate();
 
+  // State
   const [step, setStep] = useState(0);
+
+  // Variables
   const totalSteps = 7;
 
+  // React Hook Form's Context
   const { handleSubmit } = useFormContext<RegisterFormSchema>();
+
+  // Mutation
   const { mutate, isPending, error } = useRegister();
 
-  const next = () => setStep((s) => s + 1);
-  const back = () => setStep((s) => s - 1);
-
+  // Mapping
   const levelMap: Record<string, string> = {
     Beginner: "level11",
     Novice: "level2",
@@ -35,6 +40,9 @@ export default function RegisterPage() {
     "Grand Master": "level5",
   };
 
+  // Functions
+  const next = () => setStep((s) => s + 1);
+  const back = () => setStep((s) => s - 1);
   const onSubmit = (data: RegisterFormSchema) => {
     const payload = {
       ...data,

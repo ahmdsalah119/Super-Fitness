@@ -2,6 +2,7 @@ import { useIntl } from "react-intl";
 import { useFormContext } from "react-hook-form";
 import StepWrapper from "./step-wrapper";
 import HorizontalPicker from "./horizontal-picker";
+import { useHandleNext } from "../_hooks/use-handle-next";
 
 export default function StepAge({
   next,
@@ -13,28 +14,23 @@ export default function StepAge({
   // Translation
   const intl = useIntl();
 
-  // hooks
+  // React Hook Form's Context
   const {
     setValue,
     watch,
-    trigger,
     formState: { errors },
   } = useFormContext();
 
-  const age = watch("age");
-  
   // Variables
+  const age = watch("age");
+
+  // Functions
   const ageOptions = Array.from({ length: 80 }, (_, i) => {
     const value = i + 18;
     return { label: value.toString(), value };
   });
 
-  // Functions
-  const handleNext = async () => {
-    const ok = await trigger("age");
-    if (!ok) return;
-    next();
-  };
+  const handleNext = useHandleNext("age", next);
 
   return (
     <StepWrapper

@@ -3,6 +3,7 @@ import { useIntl } from "react-intl";
 import StepWrapper from "./step-wrapper";
 import { Mars, Venus } from "lucide-react";
 import { cn } from "@/lib/utils/utils";
+import { useHandleNext } from "../_hooks/use-handle-next";
 
 export default function StepGender({
   next,
@@ -14,26 +15,22 @@ export default function StepGender({
   // Translation
   const intl = useIntl();
 
-  // hooks
+  // React Hook Form's Context
   const {
     setValue,
     watch,
-    trigger,
     formState: { errors },
   } = useFormContext();
 
+  // Variables
   const gender = watch("gender");
-  
+
   // Functions
   const handleSelect = (value: "male" | "female") => {
     setValue("gender", value, { shouldValidate: true });
   };
 
-  const handleNext = async () => {
-    const ok = await trigger("gender");
-    if (!ok) return;
-    next();
-  };
+  const handleNext = useHandleNext("gender", next);
 
   return (
     <StepWrapper
