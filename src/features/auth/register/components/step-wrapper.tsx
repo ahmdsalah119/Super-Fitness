@@ -44,14 +44,17 @@ export default function StepWrapper({
           onClick={onBack}
         />
       )}
+ 
 
-      <Button
-        onClick={onNext}
-        disabled={disableNext}
-        className="font-extrabold h-10 cursor-pointer px-4 py-2 bg-[#FF4100] rounded-full disabled:bg-[#D3D3D3] disabled:opacity-100 disabled:text-white w-[343px]"
-      >
-        {intl.formatMessage({ id: "step.next" })}
-      </Button>
+      {subtitle && (
+        <Button
+          onClick={onNext}
+          disabled={disableNext}
+          className="font-extrabold h-10 cursor-pointer px-4 py-2 bg-[#FF4100] rounded-full disabled:bg-[#D3D3D3] disabled:opacity-100 disabled:text-white w-[343px]"
+        >
+          Next
+        </Button>
+      )}
     </div>
   );
 }

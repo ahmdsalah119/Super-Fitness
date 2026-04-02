@@ -16,5 +16,15 @@
   "stepHeight.title": "ما هو طولك؟",
   "stepHeight.unit": "سم",
    "stepWeight.title": "ما هو وزنك؟",
-  "stepWeight.unit": "كجم"
+  "stepWeight.unit": "كجم",
+  "home.welcome": "Welcome to our project!",
+  "button.save": "Save Changes",
+  "auth.welcome": "مرحبا",
+  "register.welcome": "انشاء حساب جديد",
+  "input.firstName": "الاسم الاول",
+  "input.lastName": "الاسم الثاني",
+  "input.email": "البريد الالكتروني",
+  "input.password": "كلمة السر",
+  "auth.forgot-password": "هل نسيت كلمة المرور؟",
+  "auth.do-have-account": "هل لديك حساب ب الفعل؟ <cta>تسجيل الدخول</cta>"
 }

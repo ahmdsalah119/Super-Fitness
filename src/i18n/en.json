@@ -18,6 +18,14 @@
   "stepHeight.title": "What's your height?",
   "stepHeight.unit": "cm",
   "stepWeight.title": "What's your weight?",
-  "stepWeight.unit": "kg"
+  "stepWeight.unit": "kg",
 
+  "auth.welcome": "Hey There",
+  "register.welcome": "create an account",
+  "input.firstName": "First Name",
+  "input.lastName": "Last Name",
+  "input.email": "Email",
+  "input.password": "Password",
+  "auth.forgot-password": "Forgot Password?",
+  "auth.do-have-account": "Already Have an account ? <cta>Login</cta>"
 }
