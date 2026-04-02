@@ -6,7 +6,6 @@ import { User } from "lucide-react";
 import { useIntl } from "react-intl";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useHandleNext } from "../_hooks/use-handle-next";
 
 export default function StepRegister({ next }: { next: () => void }) {
   // React Hook Form's Context
@@ -46,7 +45,9 @@ export default function StepRegister({ next }: { next: () => void }) {
       </h1>
       <div className="flex flex-col items-start max-w-md mx-auto px-20 py-10 border rounded-[3.125rem] mb-10">
         <h3 className="text-2xl w-full mb-4 font-extrabold text-center">
-          Register
+          {formatMessage({
+            id: "register",
+          })}
         </h3>
         <div className="flex flex-col justify-center items-center gap-4 ">
           <FieldGroup>

@@ -20,9 +20,8 @@ export default function StepWrapper({
   onBack,
   disableNext,
 }: StepWrapperProps) {
-  
   // Translation
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
 
   return (
     <div className="flex flex-col items-center justify-center text-white space-y-8">
@@ -44,7 +43,6 @@ export default function StepWrapper({
           onClick={onBack}
         />
       )}
- 
 
       {subtitle && (
         <Button
@@ -52,7 +50,9 @@ export default function StepWrapper({
           disabled={disableNext}
           className="font-extrabold h-10 cursor-pointer px-4 py-2 bg-[#FF4100] rounded-full disabled:bg-[#D3D3D3] disabled:opacity-100 disabled:text-white w-[343px]"
         >
-          Next
+          {formatMessage({
+            id: "step.next",
+          })}
         </Button>
       )}
     </div>

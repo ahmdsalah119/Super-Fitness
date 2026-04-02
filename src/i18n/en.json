@@ -27,5 +27,6 @@
   "input.email": "Email",
   "input.password": "Password",
   "auth.forgot-password": "Forgot Password?",
-  "auth.do-have-account": "Already Have an account ? <cta>Login</cta>"
+  "auth.do-have-account": "Already Have an account ? <cta>Login</cta>",
+  "register": "Register"
 }

@@ -26,5 +26,6 @@
   "input.email": "البريد الالكتروني",
   "input.password": "كلمة السر",
   "auth.forgot-password": "هل نسيت كلمة المرور؟",
-  "auth.do-have-account": "هل لديك حساب ب الفعل؟ <cta>تسجيل الدخول</cta>"
+  "auth.do-have-account": "هل لديك حساب ب الفعل؟ <cta>تسجيل الدخول</cta>",
+  "register": "السجيل"
 }
