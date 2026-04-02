@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowBigLeft } from "lucide-react";
-import { Link } from "react-router-dom";
 
 type StepWrapperProps = {
   title?: string;
