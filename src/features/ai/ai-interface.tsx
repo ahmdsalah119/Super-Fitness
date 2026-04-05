@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils/utils";
 
 import ImageAi from "@/assets/emo.png";
-import AiChatBox from "./ai-chatbox";
+import AiChatBox from "./_components/ai-chatbox";
 
-export function AiButton() {
+import { AiSidebarProvider } from "./providers/AiSidebarContext";
+
+export function AiInterface() {
   // state
   const [chatIsOpen, setChatIsOpen] = useState<boolean>(false);
 
@@ -13,6 +15,7 @@ export function AiButton() {
   function toggleAIChat() {
     setChatIsOpen(!chatIsOpen);
   }
+
   return (
     <div
       className={cn(
@@ -56,7 +59,9 @@ export function AiButton() {
           !chatIsOpen && "h-0 px-0 py-0  border-0",
         )}
       >
-        <AiChatBox />
+        <AiSidebarProvider>
+          <AiChatBox />
+        </AiSidebarProvider>
       </div>
     </div>
   );
