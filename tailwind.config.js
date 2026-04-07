@@ -7,14 +7,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        baloo: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
+      },
       colors: {
         //custom colors for the app, including the primary and secondary colors
-        fontfamily: {
-          DEFAULT: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
-          rubik: ["Rubik", "sans-serif"],
-        },
         primary: {
-          DEFAULT: "#FF6600", // the orange color
+          DEFAULT: "#FF4100", // the orange color
           foreground: "oklch(0.985 0 0)",
         },
         secondary: {

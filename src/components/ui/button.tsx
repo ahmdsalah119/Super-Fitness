@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
+import arrowImg from "@/assets/arrow.svg";
 
 import { Spinner } from "./spinner";
 import { cn } from "@/lib/utils/utils";
@@ -12,7 +13,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border-border border-primary text-primary bg-background   aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
@@ -61,14 +62,24 @@ function Button({
       data-slot="button"
       data-variant={variant}
       data-size={size}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({ variant, size, className }),
+        props.name === "main" && "px-5 py-4",
+      )}
       {...props}
       disabled={props.loading || props.disabled}
     >
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-1.5 relative">
         <span className="flex items-center gap-1">{props.children}</span>
 
         {props.loading && <Spinner className="!size-[18px]" />}
+        {props.name === "main" && (
+          <img
+            src={arrowImg}
+            className=" absolute -right-10 max-md:sr-only"
+            width={35}
+          />
+        )}
       </div>
     </Comp>
   );
