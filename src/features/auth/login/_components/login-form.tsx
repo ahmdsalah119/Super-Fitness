@@ -38,11 +38,11 @@ export function LoginForm() {
 
   return (
     <form
-      className="flex flex-col items-start max-w-md mx-auto px-20 py-10 border rounded-[3.125rem]"
+      className="flex flex-col items-start max-w-md mx-auto px-20 py-10 border border-white/30 rounded-[3.125rem]"
       onSubmit={form.handleSubmit(onSubmit)}
     >
       {/* Form Title */}
-      <h1 className="self-center text-2xl mb-4 font-extrabold mt-0">
+      <h1 className="self-center text-2xl text-white mb-4 font-extrabold mt-0">
         {formatMessage({ id: "auth.login" })}
       </h1>
 
