@@ -1,5 +1,6 @@
 import type { z } from "zod";
-import { loginFieldsSchema } from "../schemes/auth.schemes";
+import { loginFieldsSchema , ForgetPasswordFieldsSchema , OTPFieldsSchema, ResetPasswordFieldsSchema} from "../schemes/auth.schemes";
+import {FORGOT_PASSWORD_STEPS} from "../constants/auth.constant"; 
 
 export type User = {
   _id: string;
@@ -21,3 +22,8 @@ export type LoginResponse = ApiResponse<{
   token: string;
   user: User;
 }>;
+
+export type ForgotPasswordSteps = (typeof FORGOT_PASSWORD_STEPS)[keyof typeof FORGOT_PASSWORD_STEPS];
+export type ForgetPasswordFields = z.infer<ReturnType<typeof ForgetPasswordFieldsSchema>>;
+export type OTPFields = z.infer<ReturnType<typeof OTPFieldsSchema>>;
+export type ResetPasswordFields = z.infer<ReturnType<typeof ResetPasswordFieldsSchema>>;

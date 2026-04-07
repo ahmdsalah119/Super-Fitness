@@ -9,5 +9,13 @@
   "auth.email-invalid": "Invalid email address",
   "auth.password-required": "Password is required",
   "auth.forgot-password": "Forgot Password?",
-  "auth.dont-have-account": "Don't Have An Account Yet? <cta>Register</cta>"
+  "auth.dont-have-account": "Don't Have An Account Yet? <cta>Register</cta>",
+  "auth.forget-password": "Forget Password",
+  "auth.send-otp": "Send OTP",
+  "auth.enter-otp": "OTP Code",
+  "auth.new-password": "Create New Password",
+  "auth": {
+    "verify-code": "Verify Code"
+  },
+  "password-reset-success": "Password reset successfuly"
 }
