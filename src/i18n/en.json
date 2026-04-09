@@ -9,5 +9,6 @@
   "auth.email-invalid": "Invalid email address",
   "auth.password-required": "Password is required",
   "auth.forgot-password": "Forgot Password?",
-  "auth.dont-have-account": "Don't Have An Account Yet? <cta>Register</cta>"
+  "auth.dont-have-account": "Don't Have An Account Yet? <cta>Register</cta>",
+  "chose-lang": "Select Language"
 }
