@@ -6,9 +6,15 @@ import { PencilLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AiSidebar from "./ai-sidebar";
 import useAiSidebar from "../_hooks/use-ai-sidebar";
+import { useIntl } from "react-intl";
 
 export default function AiChatBox() {
+  // Custom Hook
   const { toggle, isOpen } = useAiSidebar();
+
+  // Translation
+  const { formatMessage } = useIntl();
+
   return (
     <div className="h-full relative">
       {/* Black Layer behind the side bar */}
@@ -26,7 +32,9 @@ export default function AiChatBox() {
       <div className=" relative bg-transparent z-0  top-0 left-0 w-full h-full px-4">
         <div className=" relative z-20 h-full">
           <div className=" flex items-center justify-between">
-            <h1 className=" font-bold text-2xl text-[#F3F3F4]">Smart coach</h1>
+            <h1 className=" font-bold text-2xl text-[#F3F3F4]">
+              {formatMessage({ id: "smart-coach" })}
+            </h1>
 
             <OpenIcon onClick={toggle} />
           </div>
@@ -43,7 +51,9 @@ export default function AiChatBox() {
           icon={PencilLine}
           placeholder="Send"
         />
-        <Button className=" bg-[#FF4100] h-9">Send</Button>
+        <Button className=" bg-[#FF4100] h-9">
+          {formatMessage({ id: "send" })}
+        </Button>
       </form>
 
       <div className="-z-10 absolute top-0  w-full h-full">

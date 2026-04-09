@@ -9,5 +9,10 @@
   "auth.email-invalid": "Invalid email address",
   "auth.password-required": "Password is required",
   "auth.forgot-password": "Forgot Password?",
-  "auth.dont-have-account": "Don't Have An Account Yet? <cta>Register</cta>"
+  "auth.dont-have-account": "Don't Have An Account Yet? <cta>Register</cta>",
+  "ask-me": "Hey Ask Me",
+  "tap-to-close": "Tap To Close",
+  "smart-coach": "Smart coach",
+  "send": "Send",
+  "prev-chats": "Previous conversations"
 }

@@ -9,5 +9,10 @@
   "auth.email-invalid": "البريد الإلكتروني غير صالح",
   "auth.password-required": "كلمة المرور مطلوبة",
   "auth.forgot-password": "هل نسيت كلمة المرور؟",
-  "auth.dont-have-account": "ليس لديك حساب؟ <cta>تسجيل</cta>"
+  "auth.dont-have-account": "ليس لديك حساب؟ <cta>تسجيل</cta>",
+  "ask-me": "اسالني",
+  "tap-to-close": "اضغط للاخفاء",
+  "smart-coach": "المدرب الذكي",
+  "send": "ارسال",
+  "prev-chats": "المحادثات السابقة"
 }

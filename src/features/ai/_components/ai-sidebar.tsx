@@ -1,10 +1,14 @@
 import useAiSidebar from "../_hooks/use-ai-sidebar";
 import { cn } from "@/lib/utils/utils";
 import PrevChatBox from "./prev-chat-box";
+import { useIntl } from "react-intl";
 
 export default function AiSidebar() {
   // Hooks
   const { isOpen } = useAiSidebar();
+
+  // Translation
+  const { formatMessage } = useIntl();
 
   return (
     <div
@@ -14,7 +18,7 @@ export default function AiSidebar() {
       )}
     >
       <h1 className="font-semibold text-xl m-0 mb-6 text-[#F3F3F4]">
-        Previous conversations
+        {formatMessage({ id: "prev-chats" })}
       </h1>
 
       {/* Previous chats */}
