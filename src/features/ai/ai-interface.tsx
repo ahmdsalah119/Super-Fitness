@@ -6,10 +6,15 @@ import ImageAi from "@/assets/emo.png";
 import AiChatBox from "./_components/ai-chatbox";
 
 import { AiSidebarProvider } from "./providers/AiSidebarContext";
+import { ChatProvider } from "./providers/chat-context";
+import { useIntl } from "react-intl";
 
 export function AiInterface() {
   // state
   const [chatIsOpen, setChatIsOpen] = useState<boolean>(false);
+
+  // Translation
+  const { formatMessage } = useIntl();
 
   // Functions
   function toggleAIChat() {
@@ -49,7 +54,9 @@ export function AiInterface() {
             "[box-shadow:0_8px_32px_4px_rgba(255,90,20,0.55),_0_2px_8px_0_rgba(255,90,20,0.30)]",
         )}
       >
-        {!chatIsOpen ? "Hey Ask Me" : "Tap to Close"}
+        {!chatIsOpen
+          ? formatMessage({ id: "ask-me" })
+          : formatMessage({ id: "tap-to-close" })}
       </Button>
 
       {/* AI BOX */}
@@ -59,9 +66,11 @@ export function AiInterface() {
           !chatIsOpen && "h-0 px-0 py-0  border-0",
         )}
       >
-        <AiSidebarProvider>
-          <AiChatBox />
-        </AiSidebarProvider>
+        <ChatProvider>
+          <AiSidebarProvider>
+            <AiChatBox />
+          </AiSidebarProvider>
+        </ChatProvider>
       </div>
     </div>
   );
