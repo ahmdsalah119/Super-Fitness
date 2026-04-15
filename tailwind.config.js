@@ -1,4 +1,4 @@
-import { Deflate } from "node:zlib";
+import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,14 +7,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        baloo: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
+      },
       colors: {
         //custom colors for the app, including the primary and secondary colors
-        fontfamily: {
-          DEFAULT: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
-          rubik: ["Rubik", "sans-serif"],
-        },
         primary: {
-          DEFAULT: "#FF6600", // the orange color
+          DEFAULT: "#FF4100", // the orange color
           foreground: "oklch(0.985 0 0)",
         },
         secondary: {
@@ -58,5 +58,35 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(({ addUtilities, matchUtilities, theme }) => {
+      // Static stroke utilities
+      addUtilities({
+        ".text-stroke": {
+          "-webkit-text-stroke": "2px #c9c9c2",
+          color: "transparent",
+        },
+        ".text-stroke-sm": {
+          "-webkit-text-stroke": "1px #c9c9c2",
+          color: "transparent",
+        },
+        ".text-stroke-lg": {
+          "-webkit-text-stroke": "3px #c9c9c2",
+          color: "transparent",
+        },
+      });
+
+      // Dynamic: text-stroke-[2px_#FF6600] or text-stroke-[2px_white]
+      matchUtilities(
+        {
+          "text-stroke": (value) => ({
+            "-webkit-text-stroke": value,
+            color: "transparent",
+          }),
+        },
+        { values: theme("borderWidth") },
+      );
+    }),
+  ],
 };
