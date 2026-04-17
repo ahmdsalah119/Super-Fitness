@@ -3,22 +3,34 @@ import AuthLayout from "@/layouts/AuthLayout";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "@/features/auth/login";
 import ForgotPassword from "@/features/auth/forgot-password";
+import MainLayout from "@/layouts/MainLayout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        // path: "/about",
+        // element: <About />,
+      },
+    ],
   },
+
   {
-    path: "/auth",
+    path: "/login",
     element: <AuthLayout />,
     children: [
       {
-        path: "/auth/login",
+        index: true,
         element: <Login />,
       },
       {
-        path: "/auth/forgot-password",
+        path: "forgot-password",
         element: <ForgotPassword />,
       },
     ],
