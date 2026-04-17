@@ -1,7 +1,10 @@
-import React from 'react'
+import Card from "@/components/shared/cards";
+import React from "react";
 
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <Card title="Sample Card" img="../assets/images/background.png" />
+    </div>
+  );
 }
