@@ -1,8 +1,8 @@
-const BaseUrl = "curl --location 'www.themealdb.com/api/json/v1/1/";
+const BaseUrl = "https://www.themealdb.com/api/json/v1/1/";
 //  get meals categories
 export const getMealsCategories = async () => {
   try {
-    const response = await fetch(`${BaseUrl}categories.php'`);
+    const response = await fetch(`${BaseUrl}categories.php`);
     const data = await response.json();
     return data.categories;
   } catch (error) {
@@ -12,7 +12,7 @@ export const getMealsCategories = async () => {
 // get meals by category
 export const getMealsByCategory = async (category: string) => {
   try {
-    const response = await fetch(`${BaseUrl}filter.php?c=${category}'`);
+    const response = await fetch(`${BaseUrl}filter.php?c=${category}`);
     const data = await response.json();
     return data.meals;
   } catch (error) {

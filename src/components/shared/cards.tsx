@@ -11,12 +11,12 @@ export default function Cards({ title, img }: CardProps) {
     <div className="flex items-center justify-center">
       <Card className="relative w-64 h-64 border-none shadow-lg">
         {/* image */}
-        <div className="h-64 w-64 rounded-lg overflow-hidden">
+        <div className="h-64 w-64 rounded-sm overflow-hidden">
           <img src={img} alt={title} className="w-full h-full object-cover" />
         </div>
 
         {/* overlay */}
-        <div className="absolute h-16 bottom-0 w-full bg-card/80 backdrop-blur-md px-4 py-2 rounded-b-lg flex flex-col justify-between">
+        <div className="absolute h-16 bottom-0 w-full bg-card/100 backdrop-blur-md px-4 py-1 rounded-b-sm flex flex-col justify-between">
           {/* title */}
           <h3 className="text-left text-secondary text-sm font-medium truncate">
             {title}
