@@ -5,11 +5,18 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "@/features/auth/login";
 import ForgotPassword from "@/features/auth/forgot-password";
 import Classes from "@/features/classes";
+import { AiInterface } from "@/features/ai/ai-interface";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+
+    element: (
+      <>
+        <Home />
+        <AiInterface />
+      </>
+    ),
   },
   {
     path: "/auth",

@@ -40,5 +40,10 @@
   "input.lastName": "الاسم الثاني",
   "auth.do-have-account": "هل لديك حساب ب الفعل؟ <cta>تسجيل الدخول</cta>",
   "register":"التسجيل",
-  "loading":"جاري التحميل..."
+  "loading":"جاري التحميل...",
+  "ask-me": "اسالني",
+  "tap-to-close": "اضغط للاخفاء",
+  "smart-coach": "المدرب الذكي",
+  "send": "ارسال",
+  "prev-chats": "المحادثات السابقة"
 }

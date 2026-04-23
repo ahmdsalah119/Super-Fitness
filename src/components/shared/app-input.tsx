@@ -24,6 +24,7 @@ const inputConfigs = {
 
 type AppInputProps = React.ComponentProps<"input"> & {
   icon?: LucideIcon;
+  iconClass?: string;
 };
 
 export function AppInput(props: AppInputProps) {
@@ -39,9 +40,11 @@ export function AppInput(props: AppInputProps) {
   const isPassword = props.type === "password";
 
   return (
-    <InputGroup>
+    <InputGroup className={props.className}>
       {/* Addon Icon */}
-      <InputGroupAddon>{Icon && <Icon />}</InputGroupAddon>
+      <InputGroupAddon>
+        {Icon && <Icon className={props.iconClass} />}
+      </InputGroupAddon>
 
       {/* Input */}
       <InputGroupInput
