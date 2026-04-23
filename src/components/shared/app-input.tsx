@@ -6,6 +6,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
+
 import { Button } from "@/components/ui/button";
 
 import { Mail, Lock, Eye, EyeOff, type LucideIcon } from "lucide-react";
@@ -46,7 +47,9 @@ export function AppInput(props: AppInputProps) {
       <InputGroupInput
         {...props}
         type={isPassword && isPasswordVisible ? "text" : props.type}
-        placeholder={formatMessage({ id: inputConfig?.placeholder })}
+        placeholder={formatMessage({
+          id: inputConfig?.placeholder || props.placeholder,
+        })}
       />
 
       {/* Password Visibility Toggle */}

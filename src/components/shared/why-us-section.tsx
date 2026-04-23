@@ -31,7 +31,7 @@ export const WhyUsSection = () => {
               Elevate fitness with the best way possible
             </h2>
             {/* Section Description */}
-            <p className="text-muted-foreground text-foreground text-left text-lg">
+            <p className="text-muted-foreground text-left text-lg">
               We offer a fitness journey that's tailored to your goals,
               supported by professional trainers and a welcoming community.
             </p>
@@ -59,7 +59,7 @@ export const WhyUsSection = () => {
                     {item.title}
                   </h3>
                   {/* text description */}
-                  <p className="text-muted-foreground text-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -69,7 +69,7 @@ export const WhyUsSection = () => {
         </div>
 
         {/* Photo Grid */}
-        <div className="w-full grid grid-cols-2 gap-4">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-1 gap-4">
           {/* Top Left */}
           <div className="relative overflow-hidden rounded-xl shadow-lg aspect-[4/5]">
             <img
