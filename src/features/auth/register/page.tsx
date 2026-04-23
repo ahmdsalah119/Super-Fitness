@@ -11,6 +11,7 @@ import CircularProgressWithLabelDemo from "./components/circular-progress";
 import { useRegister } from "./_hooks/use-register";
 import { RegisterFormSchema } from "@/lib/schema/kyc.schema";
 import { useNavigate } from "react-router-dom";
+import { useLevels } from "./_hooks/use-get-levels";
 
 export default function RegisterPage() {
   // Navigation
@@ -28,26 +29,14 @@ export default function RegisterPage() {
   // Mutation
   const { mutate, isPending, error } = useRegister();
 
-  // Mapping
-  const levelMap: Record<string, string> = {
-    Beginner: "level11",
-    Novice: "level2",
-    Intermediate: "level3",
-    Advanced: "level4",
-    Master: "level5",
-    Expert: "level5",
-    Legendary: "level5",
-    "Grand Master": "level5",
-  };
-
   // Functions
   const next = () => setStep((s) => s + 1);
   const back = () => setStep((s) => s - 1);
+
   const onSubmit = (data: RegisterFormSchema) => {
     const payload = {
       ...data,
       rePassword: data.password,
-      activityLevel: levelMap[data.activityLevel],
     };
     mutate(payload, {
       onSuccess: () => {

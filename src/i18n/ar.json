@@ -17,8 +17,9 @@
   "stepHeight.unit": "سم",
    "stepWeight.title": "ما هو وزنك؟",
   "stepWeight.unit": "كجم",
-  "home.welcome": "Welcome to our project!",
-  "button.save": "Save Changes",
+  "stepLevels.title": "ما هو مستوى نشاطك الرياضي؟",
+  "home.welcome": "مرحبا بك في مشروعنا!",
+  "button.save": "حفظ التغييرات",
   "auth.welcome": "مرحبا",
   "register.welcome": "انشاء حساب جديد",
   "input.firstName": "الاسم الاول",
@@ -27,5 +28,6 @@
   "input.password": "كلمة السر",
   "auth.forgot-password": "هل نسيت كلمة المرور؟",
   "auth.do-have-account": "هل لديك حساب ب الفعل؟ <cta>تسجيل الدخول</cta>",
-  "register": "السجيل"
+  "register":"التسجيل",
+  "loading":"جاري التحميل..."
 }
