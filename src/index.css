@@ -9,7 +9,7 @@
 @tailwind utilities;
 
 :root {
-  --text: #6b6375;
+  --text: #08060d;
   --text-h: #08060d;
   --bg: #fff;
   --border: #e5e4e7;
@@ -44,8 +44,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
+    --text: #ffffff;
+    --text-h: #ffffff;
     --bg: #16171d;
     --border: #2e303a;
     --code-bg: #1f2028;
@@ -160,7 +160,9 @@ code {
   }
   .dark {
     --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
+    --foreground: 0 0% 100%;
+    --text: #ffffff;
+    --text-h: #ffffff;
     --card: oklch(0.205 0 0);
     --card-foreground: oklch(0.985 0 0);
     --popover: oklch(0.205 0 0);
@@ -192,13 +194,12 @@ code {
     --sidebar-ring: oklch(0.556 0 0);
     --overlay: rgba(0, 0, 0, 0.7);
   }
-  .theme {
-    --font-sans: "Geist Variable", sans-serif;
-  }
+
   * {
     @apply border-border outline-ring/50;
   }
   body {
+    font-family: var(--sans);
     @apply bg-background text-foreground;
   }
   html {
