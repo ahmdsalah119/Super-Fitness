@@ -201,6 +201,7 @@ code {
   body {
     font-family: var(--sans);
     @apply bg-background text-foreground;
+    overflow-y: hidden;
   }
   html {
     @apply font-sans;
