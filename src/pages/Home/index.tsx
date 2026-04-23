@@ -1,10 +1,10 @@
 import React from "react";
-import { WhyUsSection } from "@/components/shared/why-us-section";
+import WorkoutSection from "@/components/shared/workout-section";
 
 export default function Home() {
   return (
     <main>
-      <WhyUsSection />
+      <WorkoutSection />
     </main>
   );
 }
