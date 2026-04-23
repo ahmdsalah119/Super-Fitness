@@ -3,6 +3,7 @@ import AuthLayout from "@/layouts/AuthLayout";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "@/features/auth/login";
 import ForgotPassword from "@/features/auth/forgot-password";
+import Classes from "@/features/classes";
 
 export const router = createBrowserRouter([
   {
@@ -23,5 +24,7 @@ export const router = createBrowserRouter([
        }
     ],
   },
+ { path:"/classes",
+  element:<Classes/>}
  
 ]);
