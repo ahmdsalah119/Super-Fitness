@@ -7,7 +7,7 @@ export default function Login() {
   const { formatMessage } = useIntl();
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent p-8 md:p-10 text-white">
       {/* Welcome Message */}
       <p className="text-2xl leading-[140%] mb-14">
         {formatMessage(

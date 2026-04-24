@@ -3,6 +3,7 @@ import { IntlProvider } from "react-intl";
 import { QueryProvider } from "@/components/providers/query-provider";
 import messagesEn from "@/i18n/en.json";
 
+
 type ProvidersProps = {
   children: React.ReactNode;
 };
