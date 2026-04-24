@@ -1,6 +1,6 @@
 import Home from "@/pages/Home";
 import AuthLayout from "@/layouts/AuthLayout";
-import Register from "@/features/auth/register/Register";
+import Register from "@/features/auth/register";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "@/features/auth/login";
 import ForgotPassword from "@/features/auth/forgot-password";
@@ -29,11 +29,11 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/login",
+    path: "/auth",
     element: <AuthLayout />,
     children: [
       {
-        index: true,
+         path: "login",
         element: <Login />,
       },
       {
@@ -45,5 +45,12 @@ export const router = createBrowserRouter([
         element: <Register />,
       },
     ],
+  },
+  {
+    path: "*", 
+    element: <div className="text-center py-20">
+      <h1 className="text-4xl font-bold">404</h1>
+      <p className="mt-4">Page not found</p>
+    </div>,
   },
 ]);

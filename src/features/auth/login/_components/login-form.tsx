@@ -2,11 +2,9 @@ import { useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { useLogin } from "@/hooks/auth/use-login";
 import { loginFieldsSchema } from "@/lib/schemes/auth.schemes";
 import type { LoginFields } from "@/lib/types/auth";
-
 import { Button } from "@/components/ui/button";
 import { Field, FieldGroup, FieldError } from "@/components/ui/field";
 import { ErrorBox } from "@/components/shared/error-box";
