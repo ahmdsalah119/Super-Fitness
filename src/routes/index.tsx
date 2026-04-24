@@ -10,7 +10,6 @@ import { AiInterface } from "@/features/ai/ai-interface";
 export const router = createBrowserRouter([
   {
     path: "/",
-
     element: (
       <>
         <Home />
@@ -30,8 +29,14 @@ export const router = createBrowserRouter([
         path: "/auth/forgot-password",
         element: <ForgotPassword />,
       },
-      { path: "/auth/register", element: <Register /> },
+      { 
+        path: "/auth/register", 
+        element: <Register /> 
+      },
     ],
   },
-  { path: "/classes", element: <Classes /> },
+  { 
+    path: "/classes", 
+    element: <Classes /> 
+  },
 ]);

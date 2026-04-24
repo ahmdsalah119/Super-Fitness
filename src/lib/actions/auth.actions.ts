@@ -31,3 +31,43 @@ export async function loginAction(credentials: LoginFields) {
     throw new Error("Something went wrong");
   }
 }
+
+export async function SendOTPAction(email: string) {
+  const response = await fetch(`${apiUrl}/auth/forgotPassword`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email }),
+  });
+
+  const payload = await response.json();
+  return payload
+
+}
+
+export async function VerifyOTPAction( resetCode : number) {
+  const response = await fetch(`${apiUrl}/auth/verifyResetCode`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ resetCode }),
+  });
+  const payload = await response.json();
+  return payload
+
+}
+
+export async function ResetPasswordAction(email: string , newPassword: string) {
+  const response = await fetch(`${apiUrl}/auth/resetPassword`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json", 
+    },
+    body: JSON.stringify({ email, newPassword }),
+  });
+ const payload = await response.json();
+  return payload
+
+}
