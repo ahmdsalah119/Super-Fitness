@@ -12,7 +12,7 @@ export default function NavLink({ children, path }: NavLinkProps) {
   const pathname = location.pathname;
 
   return (
-    <li>
+    <li> 
       <Link
         to={path}
         className={cn(
