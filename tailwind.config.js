@@ -5,18 +5,15 @@ export default {
   // Check if you are using dark mode
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-   theme: {
+  theme: {
     extend: {
       fontFamily: {
-        baloo: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
+        sans: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
         rubik: ["Rubik", "sans-serif"],
       },
-       colors: {
+      colors: {
         //custom colors for the app, including the primary and secondary colors
-        fontfamily: {
-          DEFAULT: ['"Baloo Thambi 2"', "system-ui", "sans-serif"],
-          rubik: ["Rubik", "sans-serif"],
-        },
+
         primary: {
           DEFAULT: "#FF4100", // the orange color
           foreground: "oklch(0.985 0 0)",
@@ -27,12 +24,6 @@ export default {
           // Required shadcn structure
           DEFAULT: "oklch(0.97 0 0)",
           foreground: "oklch(0.205 0 0)",
-        },
-        outline:{ 
-          DEFAULT: "hsl(var(--outline))",
-          light: "hsl(var(--outline))",
-          dark: "hsl(var(--outline))",
-          foreground: "hsl(var(--outline-foreground))",
         },
         // These map the CSS variables in index.css to Tailwind classes
         border: "hsl(var(--border))",

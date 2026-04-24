@@ -1,31 +1,13 @@
+
 import React from "react";
 import header from "@/assets/Theo Vance.svg";
 import VectorButton from "@/hooks/shared/vector-btn";
-
+import Card from "@/components/shared/cards";
+import MealsSection from "@/components/shared/meals-section";
+import WorkoutSection from "@/components/shared/workout-section";
+        
 export default function Home() {
-  return (
-    // <div className="p-0 m-0 h-screen w-full bg-cover bg-center flex items-center justify-center relative">
-    //   <div
-    //     className="w-full h-full bg-no-repeat backdrop-blur-3xl  "
-    //     style={{
-    //       backgroundImage: `url(${header})`,
-    //       backgroundSize: "cover", // or "contain", "100% 100%", etc.
-    //       backgroundPosition: "left", // or "top", "bottom", "left", etc.
-    //     }}
-    //   >
-    //     {/* Blur Layer */}
-    //     <div className="absolute h-full inset-0 bg-white/60 "></div>
-
-    //     <div className="absolute "></div>
-
-    //     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-6">
-    //       <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-4">
-    //         Push Harder
-    //       </h1>
-    //     </div>
-    //   </div>
-    // </div>
-
+  return <>
     <div className="min-h-screen relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-3xl "
@@ -86,8 +68,12 @@ export default function Home() {
               alt="home header Logo" />
             </div>
           </div>
-       
+          
+        <div>
+      <WorkoutSection />
+      <MealsSection />
       </div>
-    </div>
-  );
+      </div>
+
+</>
 }
