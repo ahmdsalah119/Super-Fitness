@@ -6,37 +6,44 @@ import Login from "@/features/auth/login";
 import ForgotPassword from "@/features/auth/forgot-password";
 import Classes from "@/features/classes";
 import { AiInterface } from "@/features/ai/ai-interface";
+import MainLayout from "@/layouts/MainLayout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <Home />
-        <AiInterface />
-      </>
-    ),
-  },
-  {
-    path: "/auth",
-    element: <AuthLayout />,
+    element: <MainLayout />,
     children: [
       {
-        path: "/auth/login",
-        element: <Login />,
+        index: true,
+        element: (
+          <>
+            <Home />
+            <AiInterface />
+          </>
+        ),
       },
       {
-        path: "/auth/forgot-password",
-        element: <ForgotPassword />,
-      },
-      { 
-        path: "/auth/register", 
-        element: <Register /> 
+        path: "classes",
+        element: <Classes />,
       },
     ],
   },
-  { 
-    path: "/classes", 
-    element: <Classes /> 
+  {
+    path: "/login",
+    element: <AuthLayout />,
+    children: [
+      {
+        index: true,
+        element: <Login />,
+      },
+      {
+        path: "forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+    ],
   },
 ]);

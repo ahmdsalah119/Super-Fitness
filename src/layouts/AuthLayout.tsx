@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import background from "../assets/background.png";
 import authLayout from "../assets/authLayout.png";
-import fit from "../assets/fit.png";
+import fit from "../assets/fit.svg";
 
 export default function AuthLayout() {
   return (
